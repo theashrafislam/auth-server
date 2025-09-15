@@ -7,9 +7,13 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: 'http://localhost:5173' || 'https://my-tools-box.vercel.app', // Vite default port
+  origin: [
+    "http://localhost:5173", 
+    "https://my-tools-box.vercel.app"
+  ],
   credentials: true
 }));
+
 app.use(express.json());
 
 // Routes
