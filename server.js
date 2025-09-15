@@ -7,7 +7,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: 'http://localhost:5173', // Vite default port
+  origin: 'http://localhost:5173' || 'https://my-tools-box.vercel.app', // Vite default port
   credentials: true
 }));
 app.use(express.json());
@@ -93,7 +93,7 @@ app.get('/api/docs', (req, res) => {
     title: "🔐 Full-Stack Authentication API Documentation",
     version: "1.0.0",
     description: "JWT-based authentication system with MongoDB and Express.js",
-    baseURL: `http://localhost:${process.env.PORT || 5000}`,
+    baseURL: `http://localhost:${process.env.PORT || 5000}` || 'https://my-tools-box.vercel.app',
     author: "Full-Stack Developer",
     lastUpdated: new Date().toISOString(),
     endpoints: [
